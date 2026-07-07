@@ -203,5 +203,18 @@
   </div>
 </footer>
 
+<script>
+  // ct= passthrough: a share source can link /?c=AppShare and the store
+  // badges' ct= is rewritten to that token, keeping channels separable in
+  // App Store Connect Campaigns (e.g. the app's Settings "Share the App").
+  (function () {
+    var c = new URLSearchParams(location.search).get("c");
+    if (!/^[A-Za-z]{2,20}$/.test(c || "")) return;
+    document.querySelectorAll("a.store-btn").forEach(function (a) {
+      a.href = a.href.replace(/([?&]ct=)[^&]*/, "$1" + c);
+    });
+  })();
+</script>
+
 </body>
 </html>
