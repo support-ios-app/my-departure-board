@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["88WLWZXQQ5.com.galaxygrok.CommuterApp"],
+        "components": [
+          { "/": "/b/", "comment": "station board share link (query-param form)" },
+          { "/": "/b/*", "comment": "station board share link (path form, future-proof)" }
+        ]
+      }
+    ]
+  }
+}

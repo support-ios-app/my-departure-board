@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live departure board — CommuteWatch</title>
+<meta name="description" content="Someone shared a live UK departure board with you. Open it in CommuteWatch — free live boards on your home screen.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="apple-itunes-app" content="app-id=6775080218">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CommuteWatch">
+<meta property="og:title" content="Live departure board — CommuteWatch">
+<meta property="og:description" content="See the live board for this station — free, on your home screen, no ads.">
+<meta property="og:image" content="https://commutewatch.app/assets/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Live departure board — CommuteWatch">
+<meta name="twitter:description" content="See the live board for this station — free, on your home screen, no ads.">
+<meta name="twitter:image" content="https://commutewatch.app/assets/og-home.png">
+
+<style>
+  :root {
+    --bg: #0d0d0d; --panel: #161513; --line: #2a2823;
+    --text: #f0eee8; --muted: #96948e; --amber: #f0b93c;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text); min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 32px 24px; text-align: center;
+  }
+  a { color: var(--amber); text-decoration: none; }
+  .icon { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 20px; }
+  h1 { font-size: 1.6rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .crs { font-family: var(--mono); color: var(--amber); }
+  p.sub { color: var(--muted); max-width: 26em; margin: 8px 0 28px; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--text); color: var(--bg) !important;
+    border-radius: 12px; padding: 13px 24px;
+    font-weight: 600; font-size: 1.05rem;
+  }
+  .store-btn .apple { font-size: 1.3em; line-height: 1; }
+  .open-app { display: block; margin-top: 18px; font-size: 0.95rem; }
+  footer { margin-top: 48px; font-size: 0.85rem; color: var(--muted); }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<img class="icon" src="/assets/icon-360.png" alt="CommuteWatch app icon">
+<h1 id="headline">Live departure board</h1>
+<p class="sub">See it live in CommuteWatch — free departure boards for National Rail, the
+Elizabeth line and London Overground, right on your home screen.</p>
+
+<a class="store-btn" href="https://apps.apple.com/app/apple-store/id6775080218?pt=128854307&amp;ct=Share&amp;mt=8">
+  <span class="apple">&#63743;</span> Get CommuteWatch
+</a>
+<a class="open-app" id="open-app" href="commuterapp://board" hidden>Already have the app? Open the board →</a>
+
+<footer><a href="/">commutewatch.app</a> · currently listed on the App Store as “My Departure Board”</footer>
+
+<script>
+  // Read ?s=CRS&n=Station+Name — set headline + app deep link.
+  // (If the app is installed, iOS normally intercepts this URL as a Universal
+  //  Link before this page ever loads; this page is the no-app / browser path.)
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var crs = (q.get("s") || "").toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3);
+    var name = (q.get("n") || "").slice(0, 40);
+    if (name || crs) {
+      document.getElementById("headline").innerHTML =
+        "Live board — " + (name ? name.replace(/[<>&]/g, "") + " " : "") +
+        (crs ? '<span class="crs">(' + crs + ")</span>" : "");
+    }
+    if (crs) {
+      var open = document.getElementById("open-app");
+      open.href = "commuterapp://board?crs=" + crs + "&source=share_link";
+      open.hidden = false;
+    }
+  })();
+</script>
+
+</body>
+</html>
