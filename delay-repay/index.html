@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to claim Delay Repay on contactless &amp; Oyster — CommuteWatch</title>
+<meta name="description" content="Delayed 15 minutes or more? You're owed money — even if you paid by contactless or Oyster. A practical guide to claiming Delay Repay, with every London operator's threshold and claim link.">
+<link rel="canonical" href="https://commutewatch.app/delay-repay/">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="apple-itunes-app" content="app-id=6775080218">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CommuteWatch">
+<meta property="og:title" content="Delayed train? That can be money back — even on contactless.">
+<meta property="og:description" content="Automatic compensation schemes mostly skip contactless and Oyster passengers. Here's how to claim Delay Repay yourself — thresholds and claim links for every London operator.">
+<meta property="og:url" content="https://commutewatch.app/delay-repay/">
+<meta property="og:image" content="https://commutewatch.app/assets/og-delay-repay.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Delayed train? That can be money back — even on contactless.">
+<meta name="twitter:description" content="How to claim Delay Repay on contactless and Oyster, with every London operator's threshold and claim link.">
+<meta name="twitter:image" content="https://commutewatch.app/assets/og-delay-repay.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I claim Delay Repay if I paid by contactless?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Delay Repay applies regardless of how you paid. Contactless and Oyster passengers claim directly from the train operator, using the journey history from their TfL account as evidence. On the Elizabeth line and London Overground you claim a service delay refund from TfL instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How late does my train have to be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most London commuter operators pay out from 15 minutes' delay at your destination (Delay Repay 15). The Elizabeth line, London Overground and LNER pay from 30 minutes. Compensation rises with the length of delay, up to 100% of your fare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do I have to make a Delay Repay claim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "28 days from the date of the delayed journey, for all operators."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --panel: #161513;
+    --line: #2a2823;
+    --text: #f0eee8;
+    --muted: #96948e;
+    --amber: #f0b93c;
+    --red: #e8483d;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 28px 0 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 40px; height: 40px; border-radius: 9px; }
+  .brand .name { font-size: 1.15rem; font-weight: 700; }
+  .brand nav { margin-left: auto; font-size: 0.95rem; }
+
+  article { padding: 48px 0 32px; }
+  h1 { font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px; }
+  h1 .amber { color: var(--amber); }
+  .standfirst { font-size: 1.15rem; color: var(--muted); margin-bottom: 8px; }
+  .updated { font-size: 0.85rem; color: var(--muted); font-family: var(--mono); margin-bottom: 36px; }
+
+  h2 { font-size: 1.45rem; margin: 44px 0 14px; letter-spacing: -0.01em; }
+  h3 { font-size: 1.1rem; margin: 26px 0 8px; }
+  p { margin: 0 0 14px; }
+  p, li { color: #d9d7d0; }
+  strong { color: var(--text); }
+  ul, ol { padding-left: 24px; margin-bottom: 14px; }
+  li { margin: 6px 0; }
+
+  .tldr {
+    border: 1px solid var(--line); background: var(--panel); border-radius: 14px;
+    padding: 20px 24px; margin-bottom: 8px;
+  }
+  .tldr .label { font-family: var(--mono); color: var(--amber); font-size: 0.8rem;
+                 letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+  .tldr p { margin-bottom: 6px; }
+
+  .bands { font-family: var(--mono); font-size: 0.95rem; border: 1px solid var(--line);
+           border-radius: 12px; overflow: hidden; margin: 18px 0; }
+  .bands .row { display: flex; justify-content: space-between; padding: 10px 18px; border-bottom: 1px solid var(--line); }
+  .bands .row:last-child { border-bottom: none; }
+  .bands .d { color: var(--red); }
+  .bands .c { color: var(--amber); }
+
+  .table-scroll { overflow-x: auto; margin: 18px 0; border: 1px solid var(--line); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 540px; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+       color: var(--muted); background: var(--panel); }
+  tr:last-child td { border-bottom: none; }
+  td.th { font-family: var(--mono); color: var(--amber); white-space: nowrap; }
+
+  .note { font-size: 0.88rem; color: var(--muted); }
+
+  .plug {
+    border: 1px solid var(--line); background: var(--panel); border-radius: 16px;
+    padding: 26px 28px; margin: 44px 0 12px;
+  }
+  .plug h2 { margin: 0 0 10px; font-size: 1.3rem; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--text); color: var(--bg) !important;
+    border-radius: 12px; padding: 11px 20px; margin-top: 12px;
+    font-weight: 600; font-size: 1rem;
+  }
+  .store-btn:hover { text-decoration: none; opacity: 0.9; }
+  .store-btn .apple { font-size: 1.3em; line-height: 1; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 0.9rem; margin-top: 40px; }
+  footer .links { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="brand">
+    <a href="/"><img src="/assets/icon-360.png" alt="CommuteWatch app icon" width="40" height="40"></a>
+    <span class="name"><a href="/" style="color:inherit">CommuteWatch</a></span>
+    <nav><a href="/">Home</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+<article>
+  <h1>Delayed train? That can be <span class="amber">money back</span> — even on contactless.</h1>
+  <p class="standfirst">Delay Repay is one of the most under-claimed entitlements in Britain —
+  and if you tap in with contactless or Oyster, no automatic scheme is going to claim it for you.
+  Here's how to do it yourself, in about three minutes.</p>
+  <p class="updated">Thresholds &amp; claim links verified July 2026</p>
+
+  <div class="tldr">
+    <span class="label">The short version</span>
+    <p><strong>1.</strong> Train arrived <strong>15+ minutes late</strong> at your destination
+    (30+ on Elizabeth line, Overground and LNER)? You're owed compensation — whatever ticket you used.</p>
+    <p><strong>2.</strong> You claim from the <strong>train operator</strong> (or TfL, for their lines) — table below.</p>
+    <p><strong>3.</strong> You have <strong>28 days</strong>. Contactless/Oyster journey history from your TfL account counts as evidence.</p>
+  </div>
+
+  <h2>What you're owed</h2>
+  <p>Delay Repay is a national compensation scheme run by the train operators. It pays out based on
+  how late you arrived at your destination — regardless of why the train was delayed, and regardless
+  of how you paid. Typical bands for a single fare:</p>
+
+  <div class="bands">
+    <div class="row"><span class="d">15–29 min late</span><span class="c">25% back</span></div>
+    <div class="row"><span class="d">30–59 min late</span><span class="c">50% back</span></div>
+    <div class="row"><span class="d">60–119 min late</span><span class="c">100% back</span></div>
+    <div class="row"><span class="d">120+ min late</span><span class="c">100% of a return</span></div>
+  </div>
+  <p class="note">Exact bands vary slightly by operator — the claim pages linked below show each
+  operator's own table. Season ticket holders are compensated pro-rata per delayed journey.</p>
+
+  <h2>The catch for contactless and Oyster passengers</h2>
+  <p>Some operators advertise <strong>automatic</strong> delay compensation — but look closely and
+  it's tied to tickets they sold you: advance tickets bought on their app, or smartcard season
+  tickets. If you tap in and out with a bank card, your journey never touches the operator's
+  ticketing system, so <strong>there is nothing for their automation to find</strong>. The same
+  goes for paper tickets bought at the machine.</p>
+  <p>That doesn't reduce your entitlement by a penny. It just means nobody claims it for you —
+  which is why so much Delay Repay money goes unclaimed by exactly the passengers who commute
+  the most.</p>
+
+  <h2>Getting your journey evidence</h2>
+  <p>For a contactless or Oyster claim, the operator wants to see that you actually made the
+  journey. Your bank statement won't do it — TfL charges your card once per day as a single
+  aggregate, with no stations on it. What you want is your <strong>TfL journey history</strong>:</p>
+  <ol>
+    <li>Sign in at <a href="https://tfl.gov.uk" rel="noopener">tfl.gov.uk</a> (create an account
+    and add your contactless card if you haven't — takes two minutes).</li>
+    <li>Go to <strong>Contactless &amp; Oyster → journey history</strong>. Every touch-in and
+    touch-out is there with station and time, going back 12 months.</li>
+    <li>Download the statement for the day of the delay, or screenshot the journey.</li>
+  </ol>
+  <p class="note">Tip: register your card <em>before</em> you need it — journey history only
+  attaches to registered cards, and if you tap with Apple Pay note that the phone and the
+  physical card count as different cards.</p>
+
+  <h2>How to claim, step by step</h2>
+  <ol>
+    <li><strong>Note the train you took</strong> — origin, scheduled departure time, destination.
+    (This is the bit everyone forgets by the evening. It's also exactly what CommuteWatch
+    records when you save a trip — more below.)</li>
+    <li><strong>Check the delay at your destination</strong> was at or over your operator's
+    threshold — 15 or 30 minutes, table below. It's arrival delay that counts, not departure.</li>
+    <li><strong>Gather evidence</strong> — TfL journey history for contactless/Oyster, a photo of
+    your ticket, or your season ticket details.</li>
+    <li><strong>File on the operator's Delay Repay page</strong> — linked below. First claim
+    takes ~5 minutes with account setup; repeat claims are faster.</li>
+    <li><strong>Within 28 days</strong> of the journey. Most operators pay to your bank within
+    a few working days of approval.</li>
+  </ol>
+
+  <h2>Every London operator's threshold and claim link</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Operator</th><th>Pays from</th><th>Claim</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Thameslink</td><td class="th">15 min</td><td><a href="https://www.thameslinkrailway.com/help-and-support/delay-repay" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Southern</td><td class="th">15 min</td><td><a href="https://www.southernrailway.com/help-and-support/delay-repay-compensation" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Great Northern</td><td class="th">15 min</td><td><a href="https://www.greatnorthernrail.com/help-and-support/delay-repay-compensation" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Gatwick Express</td><td class="th">15 min</td><td><a href="https://www.gatwickexpress.com/help-and-support/delay-repay-compensation" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Southeastern</td><td class="th">15 min</td><td><a href="https://www.southeasternrailway.co.uk/help/refunds-and-compensation/delay-repay-compensation" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>South Western Railway</td><td class="th">15 min</td><td><a href="https://www.southwesternrailway.com/contact-and-help/delay-repay" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Great Western Railway</td><td class="th">15 min</td><td><a href="https://www.gwr.com/help-and-support/refunds-and-compensation/delay-repay" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Avanti West Coast</td><td class="th">15 min</td><td><a href="https://www.avantiwestcoast.co.uk/help-and-support/delay-repay" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>c2c</td><td class="th">15 min</td><td><a href="https://www.c2c-online.co.uk/help-feedback/delay-repay/" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Greater Anglia</td><td class="th">15 min</td><td><a href="https://www.greateranglia.co.uk/about-us/our-performance/delay-repay" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Chiltern Railways</td><td class="th">15 min</td><td><a href="https://www.chilternrailways.co.uk/delayrepay15" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>East Midlands Railway</td><td class="th">15 min</td><td><a href="https://www.eastmidlandsrailway.co.uk/help-manage/manage/make-a-delay-repay-claim" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>London Northwestern Railway</td><td class="th">15 min</td><td><a href="https://www.londonnorthwesternrailway.co.uk/about-us/delay-repay" rel="noopener">Delay Repay</a></td></tr>
+        <tr><td>Elizabeth line</td><td class="th">30 min</td><td><a href="https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund" rel="noopener">TfL service delay refund</a></td></tr>
+        <tr><td>London Overground</td><td class="th">30 min</td><td><a href="https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund" rel="noopener">TfL service delay refund</a></td></tr>
+        <tr><td>LNER</td><td class="th">30 min</td><td><a href="https://www.lner.co.uk/support/delay-repay/" rel="noopener">Delay Repay</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The Elizabeth line and London Overground run TfL's own scheme (a refund of the
+  single fare for qualifying delays) rather than national Delay Repay — the 15-minute rule you may
+  know from the Tube does not apply to them. Thresholds and URLs change occasionally; if a link has
+  moved, search “&lt;operator&gt; delay repay”.</p>
+
+  <div class="plug">
+    <h2>The annoying part, automated</h2>
+    <p>The hardest bit of claiming isn't the form — it's knowing, three days later, <em>which train
+    you were on and how late it actually arrived</em>. CommuteWatch is a free iPhone app that puts
+    live departure boards on your home screen; tap once as you board to save the trip, and it
+    checks how the train actually ran. When the recorded delay crosses your operator's threshold,
+    it shows the delay and links you straight to the right claim form — with the journey details
+    you need on screen.</p>
+    <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6775080218?pt=128854307&amp;ct=DelayRepay&amp;mt=8">
+      <span class="apple">&#63743;</span> Download on the App Store
+    </a>
+    <p class="note" style="margin-top:10px">Currently listed as “My Departure Board” — becoming
+    CommuteWatch with the next update.</p>
+  </div>
+
+  <p class="note">CommuteWatch is an independent app and website, not affiliated with National Rail
+  Enquiries, Network Rail, Transport for London or any train operating company. This guide is
+  general information, not legal advice; each operator's own terms govern their scheme.</p>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support.ios.app@gmail.com">Support</a>
+    </div>
+    <p>© 2026 CommuteWatch.</p>
+  </div>
+</footer>
+
+</body>
+</html>
