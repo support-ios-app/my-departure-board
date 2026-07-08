@@ -54,10 +54,12 @@ d = ImageDraw.Draw(card)
 word_font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 62)
 mono_font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 34)
 
+# Wordmark ONLY — no domain in the image. An OG image always renders WITH the
+# platform's link strip, which already shows title + domain; a domain baked in
+# the image made the bubble read the brand three times (user report 2026-07-08).
+# (The in-app SHARE CARD is the opposite case: that image travels without its
+# link, so THAT footer carries CommuteWatch.app.)
 d.text((48, H - 82), "CommuteWatch", font=word_font, fill=TEXT)
-domain = "commutewatch.app"
-dw = d.textlength(domain, font=mono_font)
-d.text((W - 48 - dw, H - 62), domain, font=mono_font, fill=AMBER)
 
 card.save(OUT, optimize=True)
 print(f"wrote {OUT} ({OUT.stat().st_size // 1024} KB)")
