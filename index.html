@@ -82,7 +82,16 @@
   .feature:nth-child(even) { flex-direction: row-reverse; }
   .feature .copy { flex: 1 1 380px; }
   .feature .shot { flex: 0 1 280px; min-width: 220px; }
-  .feature .shot img { width: 100%; border-radius: 22px; border: 1px solid var(--line); display: block; }
+  .feature .shot img,
+  .feature .shot video { width: 100%; border-radius: 22px; border: 1px solid var(--line); display: block; }
+
+  /* Scroll reveal: .reveal is added by JS only, so no-JS users see everything;
+     prefers-reduced-motion users get no animation at all. */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(22px);
+              transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal.in { opacity: 1; transform: none; }
+  }
   .feature h2 { font-size: 1.5rem; margin-bottom: 12px; letter-spacing: -0.01em; }
   .feature p { color: var(--muted); max-width: 36em; }
   .feature p + p { margin-top: 10px; }
@@ -153,7 +162,9 @@
         Southampton to find yours.</p>
       </div>
       <div class="shot">
-        <img src="/assets/board.png" alt="Filtered departure board showing only trains calling at Richmond, with 26 other trains hidden by the filter" loading="lazy">
+        <video src="/assets/filter-demo.mp4" poster="/assets/filter-demo-poster.jpg"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="Screen recording: searching a station shows the full busy board, then pinning a commute to Richmond filters it to just the trains that stop there, with 31 other trains hidden"></video>
       </div>
     </div>
 
@@ -169,7 +180,9 @@
         <a class="more" href="/delay-repay/">Read the Delay Repay guide →</a>
       </div>
       <div class="shot">
-        <img src="/assets/reason.png" alt="Departure board showing a cancelled service with the reason: trespassers on the railway" loading="lazy">
+        <video src="/assets/delay-repay-demo.mp4" poster="/assets/delay-repay-demo-poster.jpg"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="Screen recording: long-pressing a delayed train to save the trip, then the My Trips list showing a cancelled and a 48-minute-late journey both marked eligible, ending on the operator's Delay Repay claim page"></video>
       </div>
     </div>
   </section>
@@ -212,6 +225,20 @@
     if (!/^[A-Za-z]{2,20}$/.test(c || "")) return;
     document.querySelectorAll("a.store-btn").forEach(function (a) {
       a.href = a.href.replace(/([?&]ct=)[^&]*/, "$1" + c);
+    });
+  })();
+
+  // Scroll reveal (progressive enhancement — see .reveal CSS).
+  (function () {
+    if (!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".feature, .trust").forEach(function (el) {
+      el.classList.add("reveal");
+      io.observe(el);
     });
   })();
 </script>
